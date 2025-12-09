@@ -3,6 +3,7 @@ export const siteConfig = {
   title: "Graduate Software Engineer",
   description: "Portfolio website of Jamie Hunt - Graduate Software Engineer with expertise in full-stack development, IoT systems, and cloud-native platforms",
   accentColor: "#1d4ed8",
+  heroImage: "/Portfolio/profile.jpg", 
   social: {
     email: "jamhun04@gmail.com",
     linkedin: "https://www.linkedin.com/in/jamie-hunt-7411b223b/",
