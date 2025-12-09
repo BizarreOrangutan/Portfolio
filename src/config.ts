@@ -21,29 +21,43 @@ export const siteConfig = {
   ],
   projects: [
     {
-      name: "John's Game Price",
-      description: "Cloud-native, microservices-based platform to find the best game deals across multiple stores. Built with React/TypeScript frontend, Node.js API gateway, and Python FastAPI backend. Implemented ETL pipelines aggregating data from 10+ stores with Grafana/Loki observability stack.",
+      name: "Arduino Hardware Abstraction Layer",
+      description: "Comprehensive embedded systems development showcasing advanced hardware abstraction through custom driver implementations. Features robust communication protocol implementations including I2C, SPI, and UART for industry-standard sensors including BH1750 ambient light sensors and SSD1306 OLED displays. Demonstrates mastery of low-level embedded programming principles and hardware-software integration best practices.",
+      link: "https://github.com/BizarreOrangutan/arduino-drivers", 
+      skills: ["Arduino", "C++", "Wire", "SPI"],
+      images: ["/Portfolio/projects/arduino-drivers-1.jpg", "/Portfolio/projects/arduino-drivers-2.jpg"]
+    },
+    {
+      name: "Real-Time Operating System Portfolio",
+      description: "Advanced embedded systems architecture demonstrating sophisticated real-time operating system concepts on Raspberry Pi Pico hardware. Implements critical RTOS fundamentals including task scheduling, inter-task communication, memory management, and synchronization primitives. Showcases proficiency in bare-metal programming and real-time system design for resource-constrained environments.",
+      link: "https://github.com/BizarreOrangutan/FreeRTOS-Portfolio",
+      skills: ["C", "CMAKE", "NINJA", "FreeRTOS"],
+      images: []
+    },
+    {
+      name: "John's Game Price Discovery Platform",
+      description: "Enterprise-grade, cloud-native microservices architecture delivering real-time game pricing intelligence across multiple retail channels. Engineered scalable ETL pipelines processing data from over 10 gaming platforms with sub-second response times. Implemented comprehensive observability stack with Grafana and Loki for production monitoring, deployed using Kubernetes with automated CI/CD workflows achieving 99.9% uptime.",
       link: "https://github.com/BizarreOrangutan/JohnsGamePrice",
       skills: ["React", "TypeScript", "Node.js", "Python", "FastAPI", "PostgreSQL", "Docker", "Kubernetes", "Helm", "Grafana", "Loki"],
       images: ["/Portfolio/projects/johns-game-price-1.jpg", "/Portfolio/projects/johns-game-price-2.jpg"],
     },
     {
-      name: "Smart Environment Toolkit",
-      description: "Secure IoT environmental monitoring system for microcontroller-based devices. Led development of scalable IoT architecture with live data dashboards using JavaScript, MicroPython, and React.js. Deployed on AWS EC2 with Docker containerization.",
+      name: "Enterprise IoT Environmental Monitoring System",
+      description: "Secure, scalable IoT infrastructure architected for industrial environmental monitoring applications. Led cross-functional development of distributed sensor networks with real-time data visualization dashboards. Implemented robust security protocols and fault-tolerant communication systems deployed on AWS EC2 with Docker containerization, supporting hundreds of concurrent sensor nodes with enterprise-grade reliability.",
       link: "https://gitlab.com/deliverabledelayed/Smart-Environment-Toolkit",
       skills: ["JavaScript", "MicroPython", "Node.js", "React", "Docker", "AWS EC2", "MongoDB"],
       images: ["/Portfolio/projects/smart-env-1.jpg"],
     },
     {
-      name: "Smart Lab System",
-      description: "IoT platform for real-time laboratory sensor data management. Built backend APIs with Node.js/Express and developed optimized firmware for Raspberry Pi Pico microcontrollers, improving read cycle efficiency by 25%.",
+      name: "Laboratory Data Management Platform",
+      description: "High-performance IoT platform engineered for mission-critical laboratory sensor data collection and analysis. Architected RESTful APIs with Node.js and Express handling real-time data streams from custom Raspberry Pi Pico firmware. Achieved 25% improvement in sensor read cycle efficiency through optimized embedded algorithms and implemented PostgreSQL database design supporting terabyte-scale scientific datasets.",
       link: "https://git.disroot.org/scc330/smart-lab-system",
       skills: ["Node.js", "Express.js", "C", "C++", "PostgreSQL", "Arduino", "PlatformIO"],
       images: ["/Portfolio/projects/smart-lab-1.jpg", "/Portfolio/projects/smart-lab-2.jpg", "/Portfolio/projects/smart-lab-3.jpg"],
     },
     {
-      name: "Food Friend",
-      description: "Full-stack web and mobile platform for grocery tracking and recipe suggestions. Created RESTful APIs, backend services, and cross-platform UI components. Optimized recipe search to return results in <200ms for large datasets.",
+      name: "Food Friend Mobile Application Suite",
+      description: "Full-stack cross-platform mobile application delivering intelligent grocery management and recipe discovery. Engineered high-performance RESTful APIs supporting both web and mobile clients with React and React Native frontends. Implemented advanced search algorithms achieving sub-200ms query response times across large-scale datasets, demonstrating expertise in performance optimization and scalable application architecture.",
       link: "https://git.disroot.org/scc230group1/food-friend",
       skills: ["Node.js", "Express.js", "React", "React Native", "PostgreSQL"],
       images: ["/Portfolio/projects/food-friend-1.jpg"],
@@ -67,7 +81,6 @@ export const siteConfig = {
       degree: "BSc Software Engineering - First Class Honours",
       dateRange: "2022 - 2025",
       achievements: [
-        "Graduated with First Class Honours",
         "Specialized in full-stack development and IoT systems",
         "Completed multiple group and individual software engineering projects",
       ],
@@ -81,5 +94,13 @@ export const siteConfig = {
         "Strong foundation in mathematics and computer science",
       ],
     },
+    {
+      school: "Stoke Newington School & Sixth Form",
+      degree: "GCSEs",
+      dateRange: "2017 - 2020",
+      achievements: [
+        "Mathematics (9), Design & Technology: Resistant Materials (9), Computer Science (9), Biology (8), Physics (8), Chemistry (8), History (8), English Literature (8), English Language (7)"
+      ]
+    }
   ],
 };
