@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Graduate Software Engineer",
   description: "Portfolio website of Jamie Hunt - Graduate Software Engineer with expertise in full-stack development, IoT systems, and cloud-native platforms",
   accentColor: "#1d4ed8",
-  heroImage: "/Portfolio/profile.jpg", 
+  heroImage: "/Portfolio/profile.jpg",
   social: {
     email: "jamhun04@gmail.com",
     linkedin: "https://www.linkedin.com/in/jamie-hunt-7411b223b/",
@@ -25,24 +25,28 @@ export const siteConfig = {
       description: "Cloud-native, microservices-based platform to find the best game deals across multiple stores. Built with React/TypeScript frontend, Node.js API gateway, and Python FastAPI backend. Implemented ETL pipelines aggregating data from 10+ stores with Grafana/Loki observability stack.",
       link: "https://github.com/BizarreOrangutan/JohnsGamePrice",
       skills: ["React", "TypeScript", "Node.js", "Python", "FastAPI", "PostgreSQL", "Docker", "Kubernetes", "Helm", "Grafana", "Loki"],
+      images: ["/Portfolio/projects/johns-game-price-1.jpg", "/Portfolio/projects/johns-game-price-2.jpg"],
     },
     {
       name: "Smart Environment Toolkit",
       description: "Secure IoT environmental monitoring system for microcontroller-based devices. Led development of scalable IoT architecture with live data dashboards using JavaScript, MicroPython, and React.js. Deployed on AWS EC2 with Docker containerization.",
       link: "https://gitlab.com/deliverabledelayed/Smart-Environment-Toolkit",
       skills: ["JavaScript", "MicroPython", "Node.js", "React", "Docker", "AWS EC2", "MongoDB"],
+      images: ["/Portfolio/projects/smart-env-1.jpg"],
     },
     {
       name: "Smart Lab System",
       description: "IoT platform for real-time laboratory sensor data management. Built backend APIs with Node.js/Express and developed optimized firmware for Raspberry Pi Pico microcontrollers, improving read cycle efficiency by 25%.",
       link: "https://git.disroot.org/scc330/smart-lab-system",
       skills: ["Node.js", "Express.js", "C", "C++", "PostgreSQL", "Arduino", "PlatformIO"],
+      images: ["/Portfolio/projects/smart-lab-1.jpg", "/Portfolio/projects/smart-lab-2.jpg", "/Portfolio/projects/smart-lab-3.jpg"],
     },
     {
       name: "Food Friend",
       description: "Full-stack web and mobile platform for grocery tracking and recipe suggestions. Created RESTful APIs, backend services, and cross-platform UI components. Optimized recipe search to return results in <200ms for large datasets.",
       link: "https://git.disroot.org/scc230group1/food-friend",
       skills: ["Node.js", "Express.js", "React", "React Native", "PostgreSQL"],
+      images: ["/Portfolio/projects/food-friend-1.jpg"],
     },
   ],
   experience: [
