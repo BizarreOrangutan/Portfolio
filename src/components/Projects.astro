@@ -21,107 +21,104 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
           <div class="lg:col-span-8">
             <div class="space-y-8 sm:space-y-10 md:space-y-12">
               {siteConfig.projects.map((project, index) => {
-                const Component = project.link ? "a" : "div";
-                const linkProps = project.link
-                  ? {
-                      href: project.link,
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    }
-                  : {};
-
                 return (
                   <div class="group relative">
-                    <Component
-                      {...linkProps}
-                      class={`block relative p-4 sm:p-6 md:p-8 lg:p-10 bg-gray-100 sm:bg-gray-50 rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-300 sm:border-gray-200 transition-all duration-300 ${
-                        project.link
-                          ? "hover:bg-white hover:shadow-2xl hover:border-gray-300 hover:-translate-y-2"
-                          : ""
-                      }`}
+                    <div
+                      class="block relative p-4 sm:p-6 md:p-8 lg:p-10 bg-gray-100 sm:bg-gray-50 rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-300 sm:border-gray-200 transition-all duration-300 hover:bg-white hover:shadow-2xl hover:border-gray-300 hover:-translate-y-2"
                     >
-                      {project.link && (
-                        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 lg:top-10 lg:right-10 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-gray-900 rounded-full text-white transition-all duration-300 group-hover:bg-gray-700 z-10">
-                          <svg
-                            class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M7 17L17 7M17 7H7M17 7V17"
-                            />
-                          </svg>
-                        </div>
-                      )}
-
                       <div class="space-y-4 sm:space-y-5 md:space-y-6">
                         {project.images && project.images.length > 0 && (
                           <div class="mb-4 sm:mb-5 md:mb-6">
                             {project.images.length === 1 ? (
                               <div class="flex justify-center">
-                                <img 
-                                  src={project.images[0]}
-                                  alt={`${project.name} screenshot`}
-                                  class="max-h-48 sm:max-h-64 md:max-h-80 lg:max-h-96 xl:max-h-[28rem] w-auto object-contain transition-all duration-500 group-hover:scale-105 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg cursor-zoom-in hover:shadow-2xl"
-                                  onclick="openImageModal(this.src)"
-                                />
+                                <div class="bg-transparent rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3">
+                                  <img 
+                                    src={project.images[0]}
+                                    alt={`${project.name} screenshot`}
+                                    class="max-h-64 sm:max-h-80 md:max-h-96 lg:max-h-[28rem] w-auto max-w-full rounded-md sm:rounded-lg md:rounded-xl"
+                                  />
+                                </div>
                               </div>
                             ) : (
-                              <div class={`flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 ${
-                                project.images.length === 2 ? 'flex-col sm:flex-row' :
-                                project.images.length === 3 ? 'flex-col sm:flex-row' :
-                                'flex-row flex-wrap'
-                              }`}>
-                                {project.images.map((image, imgIndex) => (
-                                  <div class={`relative flex-shrink-0 ${
-                                    project.images.length > 6 && imgIndex >= 6 ? 'hidden' : ''
-                                  }`}>
-                                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                              <div class="relative -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-10">
+                                {/* Desktop row layout - hidden on mobile */}
+                                <div class="hidden sm:flex justify-center gap-2 sm:gap-3 flex-wrap">
+                                  {project.images.map((image, imgIndex) => (
+                                    <div class="bg-transparent rounded-lg p-2 sm:p-3">
                                       <img 
                                         src={image}
                                         alt={`${project.name} screenshot ${imgIndex + 1}`}
-                                        class={`object-contain transition-all duration-500 group-hover:scale-105 cursor-zoom-in hover:shadow-2xl ${
-                                          project.images.length === 2 ? 'max-h-48 sm:max-h-64 md:max-h-80 lg:max-h-96 xl:max-h-[24rem]' :
-                                          project.images.length === 3 ? 'max-h-40 sm:max-h-56 md:max-h-64 lg:max-h-80 xl:max-h-96' :
-                                          project.images.length === 4 ? 'max-h-32 sm:max-h-48 md:max-h-64 lg:max-h-80 xl:max-h-96' :
-                                          'max-h-20 sm:max-h-32 md:max-h-40 lg:max-h-48'
-                                        } w-auto`}
-                                        onclick="openImageModal(this.src)"
+                                        class="h-48 sm:h-64 md:h-80 w-auto max-w-full object-contain rounded-md"
                                       />
-                                      {project.images.length > 6 && imgIndex === 5 && (
-                                        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
-                                          <span class="text-white font-bold text-lg sm:text-xl md:text-2xl">
-                                            +{project.images.length - 6}
-                                          </span>
-                                        </div>
-                                      )}
                                     </div>
+                                  ))}
+                                </div>
+                                
+                                {/* Mobile swiper - shown only on mobile */}
+                                <div class="sm:hidden">
+                                  <div class={`swiper`} id={`swiper-${index}`} data-images-count={project.images.length}>
+                                    <div class="swiper-wrapper">
+                                      {project.images.map((image, imgIndex) => (
+                                        <div class="swiper-slide swiper-zoom-container">
+                                          <div class="bg-transparent rounded-lg p-2 mx-1">
+                                            <img 
+                                              src={image}
+                                              alt={`${project.name} screenshot ${imgIndex + 1}`}
+                                              class="w-full max-w-[85vw] h-64 object-contain rounded-md"
+                                            />
+                                          </div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                    <div class="swiper-pagination"></div>
                                   </div>
-                                ))}
+                                </div>
                               </div>
                             )}
                           </div>
                         )}
 
-                        <div>
-                          <span
-                            class="text-xs sm:text-sm md:text-base font-mono font-bold"
-                            style={{ color: siteConfig.accentColor }}
-                          >
-                            0{index + 1}
-                          </span>
-                          <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mt-1 sm:mt-2">
-                            {project.name}
-                          </h3>
+                        <div class="flex justify-between items-start">
+                          <div class="flex-1">
+                            <span
+                              class="text-xs sm:text-sm md:text-base font-mono font-bold"
+                              style={{ color: siteConfig.accentColor }}
+                            >
+                              0{index + 1}
+                            </span>
+                            <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mt-1 sm:mt-2">
+                              {project.name}
+                            </h3>
+                          </div>
+
+                          {project.link && (
+                            <div class="flex-shrink-0 ml-4">
+                              <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-gray-900 text-white rounded-lg sm:rounded-xl hover:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base font-medium"
+                              >
+                                <span>View Project</span>
+                                <svg
+                                  class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M7 17L17 7M17 7H7M17 7V17"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          )}
                         </div>
 
-                        <p
-                          class={`text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed ${project.link ? "pr-12 sm:pr-16 md:pr-20 lg:pr-24" : ""}`}
-                        >
+                        <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed">
                           {project.description}
                         </p>
 
@@ -129,9 +126,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                           <div class="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 pt-2 sm:pt-3 md:pt-4">
                             {project.skills.map((skill) => (
                               <span
-                                class={`px-2.5 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1.5 sm:py-2 md:py-2.5 lg:py-3 bg-gray-900 text-white rounded-md sm:rounded-lg md:rounded-xl text-xs sm:text-sm md:text-base lg:text-lg font-medium transition-all duration-300 ${
-                                  project.link ? "group-hover:bg-gray-800 group-hover:shadow-lg" : ""
-                                }`}
+                                class="px-2.5 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1.5 sm:py-2 md:py-2.5 lg:py-3 bg-gray-900 text-white rounded-md sm:rounded-lg md:rounded-xl text-xs sm:text-sm md:text-base lg:text-lg font-medium transition-all duration-300 hover:bg-gray-800 hover:shadow-lg"
                               >
                                 {skill}
                               </span>
@@ -139,7 +134,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                           </div>
                         )}
                       </div>
-                    </Component>
+                    </div>
                   </div>
                 );
               })}
@@ -151,45 +146,103 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
   )
 }
 
-<!-- Image Modal -->
-<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
-  <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center">
-    <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" />
-    <button 
-      class="absolute top-4 right-4 text-white hover:text-gray-300 text-4xl font-bold transition-colors duration-200"
-      onclick="closeImageModal()"
-    >
-      &times;
-    </button>
-  </div>
-</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<script>
-  function openImageModal(imageSrc) {
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    modalImage.src = imageSrc;
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeImageModal() {
-    const modal = document.getElementById('imageModal');
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }
-
-  // Close modal when clicking outside the image
-  document.getElementById('imageModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeImageModal();
+<script is:inline>
+  // Load Swiper script and initialize only for mobile
+  const swiperScript = document.createElement('script');
+  swiperScript.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+  swiperScript.onload = function() {
+    
+    function initializeMobileSwipers() {
+      // Only initialize swipers on mobile devices
+      if (window.innerWidth < 640) {
+        const swiperElements = document.querySelectorAll('[id^="swiper-"]');
+        
+        swiperElements.forEach((swiperEl) => {
+          // Skip if already initialized
+          if (swiperEl.swiper) return;
+          
+          const pagination = swiperEl.querySelector('.swiper-pagination');
+          const imageCount = parseInt(swiperEl.getAttribute('data-images-count')) || 1;
+          
+          new Swiper(swiperEl, {
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            freeMode: true,
+            zoom: {
+              maxRatio: 3,
+              minRatio: 1,
+              toggle: true,
+              containerClass: 'swiper-zoom-container'
+            },
+            pagination: {
+              el: pagination,
+              clickable: true,
+              dynamicBullets: true,
+            },
+            allowTouchMove: true,
+            watchOverflow: true,
+            observer: true,
+            observeParents: true,
+            on: {
+              zoomChange: function(swiper, scale) {
+                // When zoomed in, disable free mode to prevent conflicts
+                if (scale > 1) {
+                  swiper.allowTouchMove = true;
+                  swiper.freeMode.enabled = false;
+                } else {
+                  swiper.freeMode.enabled = true;
+                }
+              }
+            }
+          });
+        });
+      }
     }
-  });
-
-  // Close modal with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeImageModal();
+    
+    // Initialize on load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeMobileSwipers);
+    } else {
+      initializeMobileSwipers();
     }
-  });
+    
+    // Reinitialize on window resize
+    window.addEventListener('resize', () => {
+      setTimeout(initializeMobileSwipers, 100);
+    });
+  };
+  
+  document.head.appendChild(swiperScript);
 </script>
+
+<style>
+  .swiper-pagination-bullet {
+    background: #6b7280 !important;
+    opacity: 0.5 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #1f2937 !important;
+    opacity: 1 !important;
+  }
+
+  .swiper-slide {
+    width: auto !important;
+  }
+
+  /* Zoom container styles */
+  .swiper-zoom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Only show pagination on mobile */
+  @media (min-width: 640px) {
+    .swiper-pagination {
+      display: none !important;
+    }
+  }
+</style>
