@@ -60,7 +60,7 @@ export const siteConfig = {
       description: "Full-stack cross-platform mobile application delivering intelligent grocery management and recipe discovery. Engineered high-performance RESTful APIs supporting both web and mobile clients with React and React Native frontends. Implemented advanced search algorithms achieving sub-200ms query response times across large-scale datasets, demonstrating expertise in performance optimization and scalable application architecture.",
       link: "https://git.disroot.org/scc230group1/food-friend",
       skills: ["Node.js", "Express.js", "React", "React Native", "PostgreSQL"],
-      images: ["/Portfolio/projects/food-friend-1.jpg"],
+      images: ["/Portfolio/projects/food-friend-1.jpg", "/Portfolio/projects/food-friend-2.jpg", "/Portfolio/projects/food-friend-3.jpg", "/Portfolio/projects/food-friend-4.jpg"],
     },
   ],
   experience: [
