@@ -39,7 +39,7 @@ export const siteConfig = {
       description: "Enterprise-grade, cloud-native microservices architecture delivering real-time game pricing intelligence across multiple retail channels. Engineered scalable ETL pipelines processing data from over 10 gaming platforms with sub-second response times. Implemented comprehensive observability stack with Grafana and Loki for production monitoring, deployed using Kubernetes with automated CI/CD workflows achieving 99.9% uptime.",
       link: "https://github.com/BizarreOrangutan/JohnsGamePrice",
       skills: ["React", "TypeScript", "Node.js", "Python", "FastAPI", "PostgreSQL", "Docker", "Kubernetes", "Helm", "Grafana", "Loki"],
-      images: ["/Portfolio/projects/johns-game-price-1.jpg", "/Portfolio/projects/johns-game-price-2.jpg"],
+      images: [],
     },
     {
       name: "Enterprise IoT Environmental Monitoring System",
