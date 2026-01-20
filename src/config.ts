@@ -21,25 +21,11 @@ export const siteConfig = {
   ],
   projects: [
     {
-      name: "Arduino Hardware Abstraction Layer",
-      description: "Comprehensive embedded systems development showcasing advanced hardware abstraction through custom driver implementations. Features robust communication protocol implementations including I2C, SPI, and UART for industry-standard sensors including BH1750 ambient light sensors and SSD1306 OLED displays. Demonstrates mastery of low-level embedded programming principles and hardware-software integration best practices.",
-      link: "https://github.com/BizarreOrangutan/arduino-drivers", 
-      skills: ["Arduino", "C++", "Wire", "SPI"],
-      images: ["/Portfolio/projects/arduino-drivers-1.jpg", "/Portfolio/projects/arduino-drivers-2.jpg"]
-    },
-    {
-      name: "Real-Time Operating System Portfolio",
-      description: "Advanced embedded systems architecture demonstrating sophisticated real-time operating system concepts on Raspberry Pi Pico hardware. Implements critical RTOS fundamentals including task scheduling, inter-task communication, memory management, and synchronization primitives. Showcases proficiency in bare-metal programming and real-time system design for resource-constrained environments.",
-      link: "https://github.com/BizarreOrangutan/FreeRTOS-Portfolio",
-      skills: ["C", "CMAKE", "NINJA", "FreeRTOS"],
-      images: []
-    },
-    {
       name: "John's Game Price Discovery Platform",
       description: "Enterprise-grade, cloud-native microservices architecture delivering real-time game pricing intelligence across multiple retail channels. Engineered scalable ETL pipelines processing data from over 10 gaming platforms with sub-second response times. Implemented comprehensive observability stack with Grafana and Loki for production monitoring, deployed using Kubernetes with automated CI/CD workflows achieving 99.9% uptime.",
       link: "https://github.com/BizarreOrangutan/JohnsGamePrice",
       skills: ["React", "TypeScript", "Node.js", "Python", "FastAPI", "PostgreSQL", "Docker", "Kubernetes", "Helm", "Grafana", "Loki"],
-      images: [],
+      images: ["/Portfolio/projects/johns-game-price-1.jpg", "/Portfolio/projects/johns-game-price-2.jpg", "/Portfolio/projects/johns-game-price-3.jpg"],
     },
     {
       name: "Enterprise IoT Environmental Monitoring System",
@@ -61,6 +47,20 @@ export const siteConfig = {
       link: "https://git.disroot.org/scc230group1/food-friend",
       skills: ["Node.js", "Express.js", "React", "React Native", "PostgreSQL"],
       images: ["/Portfolio/projects/food-friend-1.jpg", "/Portfolio/projects/food-friend-2.jpg", "/Portfolio/projects/food-friend-3.jpg", "/Portfolio/projects/food-friend-4.jpg"],
+    },
+    {
+      name: "Arduino Hardware Abstraction Layer",
+      description: "Comprehensive embedded systems development showcasing advanced hardware abstraction through custom driver implementations. Features robust communication protocol implementations including I2C, SPI, and UART for industry-standard sensors including BH1750 ambient light sensors and SSD1306 OLED displays. Demonstrates mastery of low-level embedded programming principles and hardware-software integration best practices.",
+      link: "https://github.com/BizarreOrangutan/arduino-drivers", 
+      skills: ["Arduino", "C++", "Wire", "SPI"],
+      images: ["/Portfolio/projects/arduino-drivers-1.jpg", "/Portfolio/projects/arduino-drivers-2.jpg"]
+    },
+    {
+      name: "Real-Time Operating System Portfolio",
+      description: "Advanced embedded systems architecture demonstrating sophisticated real-time operating system concepts on Raspberry Pi Pico hardware. Implements critical RTOS fundamentals including task scheduling, inter-task communication, memory management, and synchronization primitives. Showcases proficiency in bare-metal programming and real-time system design for resource-constrained environments.",
+      link: "https://github.com/BizarreOrangutan/FreeRTOS-Portfolio",
+      skills: ["C", "CMAKE", "NINJA", "FreeRTOS"],
+      images: []
     },
   ],
   experience: [
